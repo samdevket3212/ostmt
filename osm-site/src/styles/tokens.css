@@ -1,0 +1,154 @@
+/* One Stop Media tokens. Brand palette from the brief; "derived" values exist only to meet contrast. */
+:root {
+  color-scheme: light;
+  /* Brand palette */
+  --canvas-white: #F7F4EE;
+  --studio-ink: #17191D;
+  --signal-coral: #FF6545;
+  --creative-cobalt: #345BFF;
+  --paper-white: #FFFFFF;
+  --soft-sand: #EAE5DD;
+  --muted-charcoal: #62646C;
+  --mint-accent: #C9F2CF;
+  --border-gray: #D8D6D0;
+  /* Derived for contrast */
+  --coral-deep: #C93A16;     /* coral as small text on light grounds, 4.7:1 on canvas */
+  --stone: #85837D;          /* control borders on light grounds, 3.5:1 on canvas */
+  --ink-muted-dark: #A3A39C; /* muted text on Studio Ink, 6.9:1 */
+  --ink-line: #34363C;       /* hairlines on Studio Ink */
+  --danger-light: #B42318;
+  --danger-dark: #FF8A7A;
+
+  /* Spacing, layout */
+  --container: 1360px;
+  --grid-gap: 24px;
+  --gutter-desktop: 80px;
+  --gutter-tablet: 40px;
+  --gutter-mobile: 20px;
+  --section-y: 160px;
+  --section-y-tablet: 112px;
+  --section-y-mobile: 80px;
+  --header-height: 84px;
+
+  /* Radius: selective, not everything is a pill */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+
+  /* Type */
+  --font-display: var(--ff-display, "Archivo"), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--ff-sans, "DM Sans"), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Section themes. Semantic tokens are what components use. */
+:root,
+[data-theme="canvas"] {
+  --surface: var(--canvas-white);
+  --surface-raised: var(--paper-white);
+  --ink: var(--studio-ink);
+  --ink-muted: var(--muted-charcoal);
+  --line: var(--border-gray);
+  --line-strong: var(--stone);
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: var(--coral-deep);
+  --highlight: var(--creative-cobalt);
+  --focus: var(--creative-cobalt);
+  --danger: var(--danger-light);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="sand"] {
+  --surface: var(--soft-sand);
+  --surface-raised: var(--canvas-white);
+  --ink: var(--studio-ink);
+  --ink-muted: #55575E;
+  --line: #CFC9BE;
+  --line-strong: #77756F;
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: var(--coral-deep);
+  --highlight: var(--creative-cobalt);
+  --focus: var(--creative-cobalt);
+  --danger: var(--danger-light);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="white"] {
+  --surface: var(--paper-white);
+  --surface-raised: var(--canvas-white);
+  --ink: var(--studio-ink);
+  --ink-muted: var(--muted-charcoal);
+  --line: var(--border-gray);
+  --line-strong: var(--stone);
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: var(--coral-deep);
+  --highlight: var(--creative-cobalt);
+  --focus: var(--creative-cobalt);
+  --danger: var(--danger-light);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="ink"] {
+  color-scheme: dark;
+  --surface: var(--studio-ink);
+  --surface-raised: #212329;
+  --ink: var(--canvas-white);
+  --ink-muted: var(--ink-muted-dark);
+  --line: var(--ink-line);
+  --line-strong: #6E7078;
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: var(--signal-coral);
+  --highlight: #8EA4FF;
+  --focus: var(--signal-coral);
+  --danger: var(--danger-dark);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="coral"] {
+  --surface: var(--signal-coral);
+  --surface-raised: #FF7B5F;
+  --ink: var(--studio-ink);
+  --ink-muted: #3A2420;
+  --line: rgba(23, 25, 29, 0.25);
+  --line-strong: var(--studio-ink);
+  --accent: var(--studio-ink);
+  --on-accent: var(--canvas-white);
+  --accent-ink: var(--studio-ink);
+  --highlight: var(--studio-ink);
+  --focus: var(--studio-ink);
+  --danger: var(--studio-ink);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="cobalt"] {
+  color-scheme: dark;
+  --surface: var(--creative-cobalt);
+  --surface-raised: #4A6DFF;
+  --ink: var(--paper-white);
+  --ink-muted: #E4E9FF;
+  --line: rgba(255, 255, 255, 0.3);
+  --line-strong: var(--paper-white);
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: var(--paper-white);
+  --highlight: var(--paper-white);
+  --focus: var(--paper-white);
+  --danger: var(--paper-white);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
+[data-theme="mint"] {
+  --surface: var(--mint-accent);
+  --surface-raised: #E2F8E5;
+  --ink: var(--studio-ink);
+  --ink-muted: #3F4A41;
+  --line: rgba(23, 25, 29, 0.2);
+  --line-strong: #4D5A50;
+  --accent: var(--signal-coral);
+  --on-accent: var(--studio-ink);
+  --accent-ink: #9A2C10;
+  --highlight: #2346E0;
+  --focus: var(--studio-ink);
+  --danger: var(--danger-light);
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+}
